@@ -20,7 +20,7 @@ public class Instantiaton implements CommandLineRunner {
 		
 		userRepository.deleteAll();
 		User maria = new User(null, "Maria", "maria@gmail.com");
-		User gabriel = new User(null, "Gabriel", "gabrieel@gmail.com");
+		User gabriel = new User(null, "Gabriel", "gabriel@gmail.com");
 		userRepository.saveAll(Arrays.asList(maria, gabriel));		
 	}
 }
