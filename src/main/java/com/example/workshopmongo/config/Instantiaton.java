@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.example.workshopmongo.domain.Post;
 import com.example.workshopmongo.domain.User;
+import com.example.workshopmongo.dto.AuthorDTO;
 import com.example.workshopmongo.repository.PostRepository;
 import com.example.workshopmongo.repository.UserRepository;
 
@@ -35,8 +36,8 @@ public class Instantiaton implements CommandLineRunner {
 		userRepository.saveAll(Arrays.asList(maria, gabriel, washington));	
 
 		postRepository.deleteAll();
-		Post post1 = new Post(null, sdf.parse("21/03/2021"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", maria);
-		Post post2 = new Post(null, sdf.parse("23/03/2021"), "Bom dia", "Acordei feliz !", maria);
+		Post post1 = new Post(null, sdf.parse("21/03/2021"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(maria));
+		Post post2 = new Post(null, sdf.parse("23/03/2021"), "Bom dia", "Acordei feliz !", new AuthorDTO(maria));
 		postRepository.saveAll(Arrays.asList(post1, post2));
 	}
 }
